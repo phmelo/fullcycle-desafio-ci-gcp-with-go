@@ -1,9 +1,9 @@
 steps:
   - id: "Rodando testes com Go..."
-    name: 'golang'
+    name: 'golang-ph'
     args: ['go', 'mod', 'init','./src/']
     
   - id: "Rodando testes com Go..."
-    name: 'golang'
+    name: 'golang-ph'
     args: ['go', 'test']
     

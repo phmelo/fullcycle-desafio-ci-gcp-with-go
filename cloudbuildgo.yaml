@@ -1,5 +1,6 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- id: "Gerando Imagem Golang"
+  name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
   - '--build-arg'
@@ -10,6 +11,6 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/golang-ph'
   args: ['version']
 
-images:
-- 'gcr.io/$PROJECT_ID/golang-ph:latest'
-tags: ['cloud-builders-community']
+- id: "Rodando testes com Go..."
+  name: 'golang-ph'
+  args: ['go', 'test']
