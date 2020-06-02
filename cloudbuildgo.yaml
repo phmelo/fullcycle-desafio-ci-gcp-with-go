@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--build-arg'
+  - 'golang:alpine'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/golang-ph:latest'
+  - '.'
+- name: 'gcr.io/$PROJECT_ID/golang-ph'
+  args: ['version']
+
+images:
+- 'gcr.io/$PROJECT_ID/golang-ph:latest'
+tags: ['cloud-builders-community']

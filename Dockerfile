@@ -1,15 +1,12 @@
-FROM golang:1.13
+FROM golang:alpine
 
-WORKDIR /go/src/app
-COPY ./*.go .
+WORKDIR /app
+COPY ./src/*.go ./
 
+RUN pwd
+RUN ls
 RUN go test
+RUN go build ./*.go
+RUN ./main
 
-RUN \
-   apt-get -y update && \
-   apt-get -y install ca-certificates curl docker.io && \
-   rm -rf /var/lib/apt/lists/* && \
-   curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-   chmod +x /usr/local/bin/docker-compose
-
-ENTRYPOINT ["/usr/local/bin/docker-compose"]
+ENTRYPOINT ["./main"]
