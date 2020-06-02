@@ -8,8 +8,6 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/golang-ph:latest'
   - '.'
-- name: 'gcr.io/$PROJECT_ID/golang-ph'
-  args: ['version']
 
 - id: "Rodando testes com Go..."
   name: 'golang-ph'
