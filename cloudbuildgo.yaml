@@ -3,12 +3,11 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
-  - '--build-arg'
-  - 'golang:alpine'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/golang-ph:latest'
+  - 'gcr.io/$PROJECT_ID/phgolang:latest'
   - '.'
 
 - id: "Rodando testes com Go..."
-  name: 'golang-ph'
-  args: ['go', 'test']
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec','-t','phgolang','go','test']            
+
