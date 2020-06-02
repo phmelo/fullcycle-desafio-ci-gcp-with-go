@@ -9,3 +9,4 @@ RUN go test
 RUN go build ./*.go
 RUN ./main
 
+ENTRYPOINT ["/usr/local/go/bin/go"]

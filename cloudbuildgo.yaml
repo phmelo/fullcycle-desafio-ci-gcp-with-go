@@ -9,5 +9,5 @@ steps:
 
 - id: "Rodando testes com Go..."
   name: 'gcr.io/cloud-builders/docker'
-  args: ['exec','-t','phgolang','go','test']            
+  args: ['run','-t','phgolang','test']            
 
