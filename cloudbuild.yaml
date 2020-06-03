@@ -1,7 +1,7 @@
 steps:
   - id: 'Instalando go'
     name: 'gcr.io/cloud-builders/go'
-    args: ['install', '.']
+    args: ['install', './src']
     env: ['PROJECT_ROOT=soma']
 
   - id: "Rodando go unit test"
@@ -11,7 +11,7 @@ steps:
 
   - id: "Gerando o build da aplicação"
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/phgo', '.']
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/phgo', './src']
 
 images: 
   - 'gcr.io/$PROJECT_ID/phgo'
