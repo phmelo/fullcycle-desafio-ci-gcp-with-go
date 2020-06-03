@@ -5,8 +5,22 @@ steps:
   - 'build'
   - '-t'
   - 'gcr.io/$PROJECT_ID/phgolang:latest'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/phgolang:1.0.0'
   - '.'
+
+- id: "Mostrar versão"
+  name: 'gcr.io/$PROJECT_ID/phgolang'
+  args: 'version'
 
 - id: "Rodando testes com Go..."
   name: 'gcr.io/cloud-builders/docker'
   args: ['run','-t','phgolang','test']    
+
+images:
+  - 'gcr.io/$PROJECT_ID/phgolang:latest'
+  - 'gcr.io/$PROJECT_ID/phgolang:1.0.0'
+tags: ['latest']
+
+        
+
