@@ -16,10 +16,5 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['run','-t','phgolang','test']    
 
-images:
-  - 'gcr.io/$PROJECT_ID/phgolang:latest'
-  - 'gcr.io/$PROJECT_ID/phgolang:1.0.0'
-tags: ['latest']
 
-        
 
