@@ -9,10 +9,6 @@ steps:
   - 'gcr.io/$PROJECT_ID/phgolang:1.0.0'
   - '.'
 
-- id: "Mostrar versão"
-  name: 'gcr.io/$PROJECT_ID/phgolang'
-  args: 'version'
-
 - id: "Rodando testes com Go..."
   name: 'gcr.io/cloud-builders/docker'
   args: ['run','-t','phgolang','test']    
