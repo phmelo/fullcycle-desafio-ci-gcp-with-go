@@ -7,9 +7,6 @@ steps:
   - 'gcr.io/$PROJECT_ID/phgolang:latest'
   - '.'
 
-- name: 'gcr.io/$PROJECT_ID/phgolang'
-  args: 'version'
-
 - id: "Rodando testes com Go..."
   name: 'gcr.io/cloud-builders/docker'
   args: ['run','-t','phgolang','test']    
