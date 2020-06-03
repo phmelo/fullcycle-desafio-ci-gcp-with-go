@@ -11,7 +11,7 @@ steps:
 
   - id: "Gerando o build da aplicação"
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/phgo', './src/soma']
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/phgo', '.']
 
 images: 
   - 'gcr.io/$PROJECT_ID/phgo'
